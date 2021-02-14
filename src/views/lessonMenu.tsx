@@ -36,8 +36,8 @@ const LessonMenu = ({navigation}:any) => {
 
           <View>
               <ListItem
-                        onPress={()=>{}}
-                        bottomDivider>
+                  onPress={() => navigation.push('Screen')}
+                  bottomDivider>
                 <Avatar source= {require('../static/images/classroom.jpg')} />
                 <ListItem.Content>
                   <ListItem.Title><Text>{t('Figuras geométicas sencillas 1')}</Text></ListItem.Title>

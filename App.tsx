@@ -17,6 +17,8 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import {I18nextProvider} from 'react-i18next';
 import {i18n} from "./i18n";
 import Startup from "./src/components/startup";
+import Example from "./src/views/example";
+import Screen from "./src/views/screen";
 
 const Stack = createStackNavigator();
 
@@ -68,6 +70,14 @@ const StackMenu = () => {
             name="LecturesMenu"
             options={{title: 'Lectures and quizzes'}}
             component={LessonMenu}/>
+        <Stack.Screen
+            name="Example"
+            options={{title: 'Lectures and quizzes'}}
+            component={Example}/>
+        <Stack.Screen
+            name="Screen"
+            options={{title: 'Lectures and quizzes'}}
+            component={Screen}/>
     </Stack.Navigator>
 }
 
