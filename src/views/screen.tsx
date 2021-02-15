@@ -1,7 +1,7 @@
 //https://blog.reactnativecoach.com/creating-draggable-component-with-react-native-132d30c27cb0
 import React, {useRef} from "react";
 import {Animated, View, StyleSheet, PanResponder, Text} from "react-native";
-import DragableSquare from "./dragableSquare";
+import DragableFigure, {Figure} from "./dragableFigure";
 
 const Screen = () => {
 
@@ -12,11 +12,11 @@ const Screen = () => {
             </View>
             <View style={styles.ballContainer} />
             <View style={styles.row}>
-                <DragableSquare />
-                <DragableSquare />
-                <DragableSquare />
-                <DragableSquare />
-                <DragableSquare />
+                <DragableFigure dims={true}/>
+                <DragableFigure figure={Figure.Square}/>
+                <DragableFigure figure={Figure.Square}/>
+                <DragableFigure figure={Figure.Circle}/>
+                <DragableFigure />
             </View>
         </View>
     );
