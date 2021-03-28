@@ -8,6 +8,7 @@ import {Button, Header, ThemeContext, Tile} from "react-native-elements";
 import { useTranslation } from "react-i18next";
 import {GameResult} from "../redux/types/gameResult";
 import { ListItem, Avatar } from 'react-native-elements'
+import {Figure} from "./dragableFigure";
 
 declare const global: {HermesInternal: null | {}};
 
@@ -36,7 +37,7 @@ const LessonMenu = ({navigation}:any) => {
 
           <View>
               <ListItem
-                  onPress={() => navigation.push('Screen')}
+                  onPress={() => navigation.navigate('SimpleFigures', {figureGoal:Figure.Circle, difficulty: 1})}
                   bottomDivider>
                 <Avatar source= {require('../static/images/classroom.jpg')} />
                 <ListItem.Content>

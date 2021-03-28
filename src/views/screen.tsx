@@ -3,7 +3,7 @@ import React, {useRef} from "react";
 import {Animated, View, StyleSheet, PanResponder, Text} from "react-native";
 import DragableFigure, {Figure} from "./dragableFigure";
 
-const FigurasSencillasNivel1 = () => {
+const Screen = () => {
 
     return (
         <View style={styles.mainContainer}>
@@ -12,11 +12,11 @@ const FigurasSencillasNivel1 = () => {
             </View>
             <View style={styles.ballContainer} />
             <View style={styles.row}>
-                <DragableFigure dims={true} figure={Figure.Circle}/>
+                <DragableFigure dims={true}/>
                 <DragableFigure figure={Figure.Square}/>
                 <DragableFigure figure={Figure.Square}/>
-                <DragableFigure dims={true} figure={Figure.Circle}/>
-                <DragableFigure dims={true} figure={Figure.Circle}/>
+                <DragableFigure figure={Figure.Circle}/>
+                <DragableFigure />
             </View>
         </View>
     );
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default FigurasSencillasNivel1;
+export default Screen;

@@ -18,7 +18,7 @@ import {I18nextProvider} from 'react-i18next';
 import {i18n} from "./i18n";
 import Startup from "./src/components/startup";
 import Example from "./src/views/example";
-import FigurasSencillasNivel1 from "./src/views/figurasSencillasNivel1";
+import SimpleFigures from "./src/views/simpleFigures";
 
 const Stack = createStackNavigator();
 
@@ -75,9 +75,9 @@ const StackMenu = () => {
             options={{title: 'Lectures and quizzes'}}
             component={Example}/>
         <Stack.Screen
-            name="Screen"
+            name="SimpleFigures"
             options={{title: 'Lectures and quizzes'}}
-            component={FigurasSencillasNivel1}/>
+            component={SimpleFigures}/>
     </Stack.Navigator>
 }
 

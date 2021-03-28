@@ -10,9 +10,11 @@ export  enum Figure {
 }
 
 const DragableFigure = (params: any) => {
-    let {dims, figure} = params
+    let {dims, figure, onDim, onMoveBack} = params
     dims = dims as boolean
     figure = figure as Figure
+    onDim = onDim as Function
+    onMoveBack = onMoveBack as Function
 
     const pan = useRef(new Animated.ValueXY()).current
     const dim = useRef(new Animated.Value(1)).current;
@@ -39,12 +41,13 @@ const DragableFigure = (params: any) => {
                     duration: 1000,
                     useNativeDriver:false
                 }).start(() =>{
-                        console.log("--", dim);
+                        onDim(true)
                         setShowDragable(false);
                 }
 
                 );
             } else {
+                onMoveBack(true)
                 Animated.spring(pan, {
                     toValue: {x: 0, y: 0},
                     friction: 5,
@@ -89,11 +92,13 @@ let CIRCLE_RADIUS = 30;
 const styles = StyleSheet.create({
     circle: {
         backgroundColor: "skyblue",
+        borderWidth: 1,
         width: CIRCLE_RADIUS * 2,
         height: CIRCLE_RADIUS * 2,
         borderRadius: CIRCLE_RADIUS
     },
     square: {
+        borderWidth: 1,
         backgroundColor: "skyblue",
         width: CIRCLE_RADIUS * 2,
         height: CIRCLE_RADIUS * 2,
